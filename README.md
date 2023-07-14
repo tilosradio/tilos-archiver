@@ -8,7 +8,7 @@ Folder to download files `/home/arcjob/downloads`
 
 Folder for applications `/home/arcjob/bin`
 
-Folder for git repositories `/home/arcjob/github/tilosradio`
+Folder for git repositories `/home/arcjob/source/github/tilosradio`
 
 Folder for fmedia application `/home/arcjob/bin/fmedia-1`
 
@@ -36,10 +36,10 @@ Create a new user in the linux server for archiver jobs `arcjob` Keep the passwo
 Create folders in arcjob home folder as arcjob user
 
     mkdir -p ~/downloads
+    mkdir -p ~/source/github/tilosradio
     mkdir -p ~/bin
     mkdir -p ~/capture
     mkdir -p ~/logs
-    mkdir -p ~/github/tilosradio
 
 ## fmedia recorder
 Install fmedia application from https://stsaz.github.io/fmedia/#download
@@ -51,25 +51,25 @@ Install fmedia application from https://stsaz.github.io/fmedia/#download
 
 or use install script
 
-    cd ~/github/tilosradio/tilos-archiver
+    cd ~/source/github/tilosradio/tilos-archiver
     . ./install-fmedia.sh
 
 ## git
 
 Clone git repository:
 
-    cd ~/github/tilosradio
+    cd ~/source/github/tilosradio
     git clone https://github.com/tilosradio/tilos-archiver.git
     cd tilos-archiver
 
 ## install
 Run install script
 
-    cd ~/github/tilosradio/tilos-archiver
+    cd ~/source/github/tilosradio/tilos-archiver
     . ./install.sh
 
 ## cron job
-Add the job to contab
+Add the job to contab from `cron.txt`
     
     crontab -e
     

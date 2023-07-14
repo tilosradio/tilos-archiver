@@ -1,5 +1,5 @@
 #!/bin/sh
-set -x
+# set -x
 echo "tilos_arc_mp3_maker.sh"
 echo "version 1.0.0"
 date -u
