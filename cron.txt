@@ -1,2 +1,1 @@
-29,59 * * * * /home/arcjob/scripts/tilos_arc_cron_job.sh
-# * * * * * /home/arcjob/scripts/tilos_arc_cron_job.sh -d 62
+29,59 * * * * /home/arcjob/bin/tilos_arc_cron_job.sh
