@@ -4,6 +4,7 @@ echo "tilos_arc_mp3_maker.sh"
 echo "version 1.0.0"
 date -u
 date -u -d "1 min"
+df -h | grep -e "/$"
 
 YEAR=`date -u -d "1 min" +"%Y"`
 MOUNT=`date -u -d "1 min" +"%m"`
@@ -37,4 +38,5 @@ mv "$CAPTUREPATH/$FILENAME" "$ONLINEPATH/$FILENAME"
 # sftp
 echo sftp "$ONLINEPATH/$FILENAME" "$REMOTEPATH/$FILENAME"
 date -u
+df -h | grep -e "/$"
 echo "Done"
