@@ -16,7 +16,7 @@ REMOTEPATH="tilos@archive.tilos.hu:/online/$YEAR/$MOUNT/$DAY"
 STREAM="http://stream.tilos.hu/tilos_128.mp3"
 DURATION=1822
 CAPTUREPATH="/home/arcjob/capture"
-FMEDIA="/home/arcjob/bin/fmedia"
+FMEDIA="/home/arcjob/bin/fmedia-1/fmedia"
 
 if [ "$1" = "-d" ]; then 
     DURATION=$2
