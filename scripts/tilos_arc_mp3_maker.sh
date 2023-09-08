@@ -15,7 +15,7 @@ FILENAME="tilosradio-$YEAR$MOUNT$DAY-$HOUR$MINUTE.mp3"
 ONLINEPATH="/online/$YEAR/$MOUNT/$DAY"
 REMOTEPATH="tilos@archive.tilos.hu:/online/$YEAR/$MOUNT/$DAY"
 STREAM="http://192.168.2.60:8080/digital"
-DURATION=1822
+DURATION=1802
 CAPTUREPATH="/home/arcjob/capture"
 FMEDIA="/home/arcjob/bin/fmedia-1/fmedia"
 
@@ -23,8 +23,8 @@ if [ "$1" = "-d" ]; then
     DURATION=$2
 fi
 
-SLEEPTIME=`expr 58 - \`date +%S\``
-echo "waiting for the 58sec... sleep $SLEEPTIME"
+SLEEPTIME=`expr 59 - \`date +%S\``
+echo "waiting for the sec 59 ... sleep $SLEEPTIME"
 sleep $SLEEPTIME
 
 echo "make dir for the day $ONLINEPATH"
