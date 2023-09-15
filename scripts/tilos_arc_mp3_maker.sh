@@ -18,16 +18,17 @@ DAYBP=`date -d "TZ=\"Budapest/Budapest\" 1 min" +"%d"`
 HOURBP=`date -d "TZ=\"Budapest/Budapest\" 1 min" +"%H"`
 MINUTEBP=`date -d "TZ=\"Budapest/Budapest\" 1 min" +"%M"`
 
-FILENAME="tilosradio-$YEAR$MOUNT$DAY-$HOUR$MINUTE_utc.mp3"
+FILENAME="tilosradio-$YEAR$MOUNT$DAY-$HOUR$MINUTE-utc.mp3"
 LINKNAME="tilosradio-$YEARBP$MOUNTBP$DAYBP-$HOURBP$MINUTEBP.mp3"
 ONLINEPATH="/online/$YEAR/$MOUNT/$DAY"
 LINKPATH="/online/$YEARBP/$MOUNTBP/$DAYBP"
+CAPTUREPATH="/home/arcjob/capture"
 REMOTEPATH="tilos@archive.tilos.hu:/online/$YEAR/$MOUNT/$DAY"
 STREAM="http://192.168.2.60:8080/digital"
-DURATION=1802
-CAPTUREPATH="/home/arcjob/capture"
+
 FMEDIA="/home/arcjob/bin/fmedia-1/fmedia"
 
+DURATION=1801
 if [ "$1" = "-d" ]; then 
     DURATION=$2
 fi
