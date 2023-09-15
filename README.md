@@ -1,6 +1,11 @@
 # tilos-archiver
 
-version 1.0.0
+## version 1.1.0
+- File name: `_utc.mp3`
+- Sym link with time zone Budapest 
+
+## version 1.0.0
+- startup for test
 
 ## Folders
 
@@ -14,11 +19,15 @@ Folder for fmedia application `/home/arcjob/bin/fmedia-1`
 
 Folder to store archived mp3 `/online/YYYY/MM/DD/`
 
-mp3 file name `tilosradio-YYYYMMDD-HHmm.mp3`
+utc mp3 file name `tilosradio-YYYYMMDD-HHmm_utc.mp3`
+
+symlink for mp3 file in timezone Budapest `tilosradio-YYYYMMDD-HHmm.mp3`
 
 Folder to capture mp3 file `/home/arcjob/capture`
 
-Example `/online/2023/06/29/tilosradio-20230629-0800.mp3`
+Example: 
+`/online/2023/06/29/tilosradio-20230630-0800_utc.mp3`
+`/online/2023/06/29/tilosradio-20230830-0800.mp3 -> /online/2023/06/29/tilosradio-20230630-0800_utc.mp3`
 
 ## user
 Add rights for online folder

@@ -1,5 +1,4 @@
 echo "install.sh"
-echo "version 1.0.0"
 set -x
 
 mkdir -p ~/bin
