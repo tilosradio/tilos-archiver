@@ -1,16 +1,20 @@
 echo "install.sh"
 set -x
 
-mkdir -p ~/bin
-mkdir -p ~/capture
-mkdir -p ~/logs
+VERS=`cat VERSION`
 
-cp -f ./scripts/tilos_arc_cron_job.sh /home/arcjob/bin
-cp -f ./scripts/tilos_arc_mp3_maker.sh /home/arcjob/bin
-chmod uga+x /home/arcjob/bin/tilos_arc_cron_job.sh
-chmod uga+x /home/arcjob/bin/tilos_arc_mp3_maker.sh
-chmod uga-w /home/arcjob/bin/tilos_arc_cron_job.sh
-chmod uga-w /home/arcjob/bin/tilos_arc_mp3_maker.sh
+mkdir -p /home/arcjob/bin
+mkdir -p /home/arcjob/capture
+mkdir -p /home/arcjob/logs
+mkdir -p "/home/arcjob/bin/$VERS"
+
+cp -f * "/home/arcjob/bin/$VERS"
+chmod a-w -R "/home/arcjob/bin/$VERS/*"
+chmod uga+x -R "/home/arcjob/bin/$VERS/*.sh"
+
+ln -s -f "/home/arcjob/bin/$VERS/scripts/tilos_arc_cron_job.sh" tilos_arc_cron_job.sh
+ln -s -f "/home/arcjob/bin/$VERS/scripts/tilos_arc_mp3_maker.sh" tilos_arc_mp3_maker.sh
+
 set +x
 
 crontab -l

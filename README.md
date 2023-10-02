@@ -1,7 +1,12 @@
 # tilos-archiver
 
+## version 1.2.0
+- File name: `-digital-utc.mp3`
+- online folder moved to `/tilos/online`
+- install to version folder
+
 ## version 1.1.0
-- File name: `_utc.mp3`
+- File name: `-utc.mp3`
 - Sym link with time zone Budapest 
 
 ## version 1.0.0
@@ -17,17 +22,17 @@ Folder for git repositories `/home/arcjob/source/github/tilosradio`
 
 Folder for fmedia application `/home/arcjob/bin/fmedia-1`
 
-Folder to store archived mp3 `/online/YYYY/MM/DD/`
+Folder to store archived mp3 `/tilos/online/YYYY/MM/DD/`
 
-utc mp3 file name `tilosradio-YYYYMMDD-HHmm-utc.mp3`
+utc mp3 file name `tilosradio-YYYYMMDD-HHmm-digital-utc.mp3`
 
 symlink for mp3 file in timezone Budapest `tilosradio-YYYYMMDD-HHmm.mp3`
 
 Folder to capture mp3 file `/home/arcjob/capture`
 
 Example: 
-`/online/2023/06/29/tilosradio-20230630-0800-utc.mp3`
-`/online/2023/06/29/tilosradio-20230830-0800.mp3 -> /online/2023/06/29/tilosradio-20230630-0800-utc.mp3`
+`/tilos/online/2023/06/29/tilosradio-20230630-0800-digital-utc.mp3`
+`/tilos/online/2023/06/29/tilosradio-20230830-0800.mp3 -> /tilos/online/2023/06/29/tilosradio-20230630-0800-digital-utc.mp3`
 
 ## user
 Add rights for online folder

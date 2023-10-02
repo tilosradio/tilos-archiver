@@ -1,7 +1,7 @@
 #!/bin/sh
 # set -x
-echo "tilos_arc_mp3_maker.sh"
-echo "version 1.1.0"
+echo "$0"
+echo "PID: $$"
 date -u
 date -u -d "1 min"
 df -h | grep -e "/$"
@@ -18,10 +18,10 @@ DAYBP=`date -d "TZ=\"Budapest/Budapest\" 1 min" +"%d"`
 HOURBP=`date -d "TZ=\"Budapest/Budapest\" 1 min" +"%H"`
 MINUTEBP=`date -d "TZ=\"Budapest/Budapest\" 1 min" +"%M"`
 
-FILENAME="tilosradio-$YEAR$MOUNT$DAY-$HOUR$MINUTE-utc.mp3"
+FILENAME="tilosradio-$YEAR$MOUNT$DAY-$HOUR$MINUTE-digital-utc.mp3"
 LINKNAME="tilosradio-$YEARBP$MOUNTBP$DAYBP-$HOURBP$MINUTEBP.mp3"
-ONLINEPATH="/online/$YEAR/$MOUNT/$DAY"
-LINKPATH="/online/$YEARBP/$MOUNTBP/$DAYBP"
+ONLINEPATH="/tilos/online/$YEAR/$MOUNT/$DAY"
+LINKPATH="/tilos/online/$YEARBP/$MOUNTBP/$DAYBP"
 CAPTUREPATH="/home/arcjob/capture"
 REMOTEPATH="tilos@archive.tilos.hu:/online/$YEAR/$MOUNT/$DAY"
 STREAM="http://192.168.2.60:8080/digital"
