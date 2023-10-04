@@ -11,7 +11,7 @@ mkdir -p "/home/arcjob/bin/tilos-archiver/$VERS"
 cp -f -r * "/home/arcjob/bin/tilos-archiver/$VERS"
 chmod a-w -R "/home/arcjob/bin/tilos-archiver/$VERS"
 chmod uga+x -R "/home/arcjob/bin/tilos-archiver/$VERS/*.sh"
-
+chmod uga+x -R "/home/arcjob/bin/tilos-archiver/$VERS/scripts/*.sh"
 
 set +x
 

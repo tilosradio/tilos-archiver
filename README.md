@@ -1,5 +1,9 @@
 # tilos-archiver
 
+## version 1.2.2
+- active link to version
+- cron script runs in tilos-archiver folder
+
 ## version 1.2.1
 - fix install script bugs
 - add activate script
