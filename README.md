@@ -1,5 +1,9 @@
 # tilos-archiver
 
+## version 1.2.1
+- fix install script bugs
+- add activate script
+
 ## version 1.2.0
 - File name: `-digital-utc.mp3`
 - online folder moved to `/tilos/online`
