@@ -1,5 +1,8 @@
 # tilos-archiver
 
+## version 1.2.3
+- all scripts in scripts folder
+- relative symlink
 ## version 1.2.2
 - active link to version
 - cron script runs in tilos-archiver folder
