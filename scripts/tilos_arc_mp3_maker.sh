@@ -18,7 +18,7 @@ DAYBP=`date -d "TZ=\"Budapest/Budapest\" 1 min" +"%d"`
 HOURBP=`date -d "TZ=\"Budapest/Budapest\" 1 min" +"%H"`
 MINUTEBP=`date -d "TZ=\"Budapest/Budapest\" 1 min" +"%M"`
 
-FILENAME="tilosradio-$YEAR$MOUNT$DAY-$HOUR$MINUTE-digital-utc.mp3"
+FILENAME="tilosradio-digital-$YEAR$MOUNT$DAY-$HOUR$MINUTE-utc.mp3"
 LINKNAME="tilosradio-$YEARBP$MOUNTBP$DAYBP-$HOURBP$MINUTEBP.mp3"
 ONLINEPATH="/tilos/online/$YEAR/$MOUNT/$DAY"
 LINKPATH="/tilos/online/$YEARBP/$MOUNTBP/$DAYBP"

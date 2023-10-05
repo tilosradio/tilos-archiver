@@ -1,5 +1,9 @@
 # tilos-archiver
 
+## version 1.2.4
+- rename captured file to `tilosradio-digital-YYYYMMDD-HHMMSS-utc.mp3`
+- monitor script
+
 ## version 1.2.3
 - all scripts in scripts folder
 - relative symlink
