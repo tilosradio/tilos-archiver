@@ -4,7 +4,7 @@ echo "$0"
 echo "PID: $$"
 date -u
 date -u -d "1 min"
-df -h | grep -e "/$"
+df -h | grep disk_sg20t
 
 YEAR=`date -u -d "1 min" +"%Y"`
 MOUNT=`date -u -d "1 min" +"%m"`
@@ -45,10 +45,10 @@ echo "Capture into $FILENAME"
 "$FMEDIA" "$STREAM" -o "$CAPTUREPATH/$FILENAME" --stream-copy --until=$DURATION
 echo "Move into $ONLINEPATH"
 mv "$CAPTUREPATH/$FILENAME" "$ONLINEPATH/$FILENAME"
-ln -s "$ONLINEPATH/$FILENAME" "$LINKPATH/$LINKNAME"
+ln -s -r "$ONLINEPATH/$FILENAME" "$LINKPATH/$LINKNAME"
 # remote copy to archiver storage
 # sftp
 echo sftp "$ONLINEPATH/$FILENAME" "$REMOTEPATH/$FILENAME"
 date -u
-df -h | grep -e "/$"
+df -h | grep disk_sg20t
 echo "Done"
