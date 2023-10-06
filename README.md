@@ -2,6 +2,8 @@
 
 ## version 1.2.5
 - chmod a+x *sh
+- HOME env in scripts
+- cron log
 
 ## version 1.2.4
 - rename captured file to `tilosradio-digital-YYYYMMDD-HHMMSS-utc.mp3`
@@ -67,37 +69,35 @@ Create a new user in the linux server for archiver jobs `arcjob` Keep the passwo
 
 Create folders in arcjob home folder as arcjob user
 
-    mkdir -p ~/downloads
-    mkdir -p ~/source/github/tilosradio
-    mkdir -p ~/bin
-    mkdir -p ~/capture
-    mkdir -p ~/logs
+    mkdir -p $HOME/downloads
+    mkdir -p $HOME/source/github/tilosradio
+    mkdir -p $HOME/bin
+    mkdir -p $HOME/capture
+    mkdir -p $HOME/logs
 
 ## fmedia recorder
 Install fmedia application from https://stsaz.github.io/fmedia/#download
 
-    cd ~/downloads
+    cd $HOME/downloads
     wget https://github.com/stsaz/fmedia/releases/download/v1.31/fmedia-1.31-linux-amd64.tar.xz
-    tar Jxf ./fmedia-1.*-linux-amd64.tar.xz -C ~/bin
-    ln -s ~/bin/fmedia-1/fmedia ~/bin/fmedia
+    tar Jxf ./fmedia-1.*-linux-amd64.tar.xz -C $HOME/bin
+    ln -s $HOME/bin/fmedia-1/fmedia $HOME/bin/fmedia
 
 or use install script
 
-    cd ~/source/github/tilosradio/tilos-archiver
-    . ./install-fmedia.sh
+    cd $HOME/source/github/tilosradio/tilos-archiver
+    . scripts/install-fmedia.sh
 
 ## git
 
 Clone git repository:
 
-    cd ~/source/github/tilosradio
-    git clone https://github.com/tilosradio/tilos-archiver.git
-    cd tilos-archiver
+    git clone https://github.com/tilosradio/tilos-archiver.git $HOME/source/github/tilosradio/tilos-archiver
 
 ## install
 Run install script
 
-    cd ~/source/github/tilosradio/tilos-archiver
+    cd $HOME/source/github/tilosradio/tilos-archiver/scripts
     . ./install.sh
 
 ## cron job

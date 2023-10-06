@@ -22,11 +22,11 @@ FILENAME="tilosradio-digital-$YEAR$MOUNT$DAY-$HOUR$MINUTE-utc.mp3"
 LINKNAME="tilosradio-$YEARBP$MOUNTBP$DAYBP-$HOURBP$MINUTEBP.mp3"
 ONLINEPATH="/tilos/online/$YEAR/$MOUNT/$DAY"
 LINKPATH="/tilos/online/$YEARBP/$MOUNTBP/$DAYBP"
-CAPTUREPATH="/home/arcjob/capture"
+CAPTUREPATH="$HOME/capture"
 REMOTEPATH="tilos@archive.tilos.hu:/online/$YEAR/$MOUNT/$DAY"
 STREAM="http://192.168.2.60:8080/digital"
 
-FMEDIA="/home/arcjob/bin/fmedia-1/fmedia"
+FMEDIA="$HOME/bin/fmedia-1/fmedia"
 
 DURATION=1801
 if [ "$1" = "-d" ]; then 
