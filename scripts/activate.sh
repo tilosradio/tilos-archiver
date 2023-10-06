@@ -1,6 +1,7 @@
 set -x
-VERS=`cat ../VERSION`
-rm "/home/arcjob/bin/tilos-archiver/active"
-ln -s -f "/home/arcjob/bin/tilos-archiver/$VERS" "/home/arcjob/bin/tilos-archiver/active"
-ls -la "/home/arcjob/bin/tilos-archiver"
+BASEDIR=$(dirname $0)
+VERS=`cat "$BASEDIR/../VERSION"`
+rm "$HOME/bin/tilos-archiver/active"
+ln -s -f "$HOME/bin/tilos-archiver/$VERS" "$HOME/bin/tilos-archiver/active"
+ls -la "$HOME/bin/tilos-archiver"
 set +x

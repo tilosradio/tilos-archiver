@@ -1,5 +1,8 @@
 # tilos-archiver
 
+## version 1.2.5
+- chmod a+x *sh
+
 ## version 1.2.4
 - rename captured file to `tilosradio-digital-YYYYMMDD-HHMMSS-utc.mp3`
 - monitor script
