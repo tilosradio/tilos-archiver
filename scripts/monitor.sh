@@ -2,7 +2,7 @@
 echo "$0"
 echo "UTC `date -u +"%Y%m%d-%H%M%S"`"
 echo "BP  `date +"%Y%m%d-%H%M%S"`"
-cat $(dirname $0)/../VERSION
+cat $HOME/bin/tilos-archiver/active/VERSION
 df -h | grep disk_sg20t
 crontab -l | grep tilos
 ls -la "$HOME/capture" | grep mp3
