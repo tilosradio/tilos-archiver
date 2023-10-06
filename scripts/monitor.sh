@@ -1,7 +1,8 @@
 #!/bin/sh
+echo "$0"
 echo "UTC `date -u +"%Y%m%d-%H%M%S"`"
 echo "BP  `date +"%Y%m%d-%H%M%S"`"
-cat ~/bin/tilos-archiver/active/VERSION
+cat $(dirname $0)/../VERSION
 df -h | grep disk_sg20t
 crontab -l | grep tilos
 ls -la ~/capture

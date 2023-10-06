@@ -1,22 +1,21 @@
-echo "install.sh"
+echo "$0"
 set -x
 
-VERS=`cat ../VERSION`
+BASEDIR=$(dirname $0)
+VERS=`cat $BASEDIR/../VERSION`
 
-mkdir -p /home/arcjob/bin
-mkdir -p /home/arcjob/capture
-mkdir -p /home/arcjob/logs
-mkdir -p "/home/arcjob/bin/tilos-archiver/$VERS"
-
-cp -f -r ../* "/home/arcjob/bin/tilos-archiver/$VERS"
-
-# chmod a+x -R "/home/arcjob/bin/tilos-archiver/$VERS/*.sh"
-chmod a+x -R "/home/arcjob/bin/tilos-archiver/$VERS/scripts/*.sh"
-chmod a-w -R "/home/arcjob/bin/tilos-archiver/$VERS"
+mkdir -p "$HOME/bin"
+mkdir -p "$HOME/capture"
+mkdir -p "$HOME/logs"
+chmod +w -R "$HOME/bin/tilos-archiver/$VERS"
+rm -rf "$HOME/bin/tilos-archiver/$VERS"
+mkdir -p "$HOME/bin/tilos-archiver/$VERS"
+cp -f -r "$BASEDIR/../" "$HOME/bin/tilos-archiver/$VERS/"
+chmod a-w -R "$HOME/bin/tilos-archiver/$VERS"
 
 set +x
 
 echo "==> Check crontab"
 crontab -l | grep -v "#"
 echo "==> crontab -e"
-cat ../cron.txt
+cat "$BASEDIR/../cron.txt"
