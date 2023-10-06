@@ -1,36 +1,8 @@
 # tilos-archiver
 
 ## version 1.2.5
-- chmod a+x *sh
-- HOME env in scripts
-- cron log
-
-## version 1.2.4
-- rename captured file to `tilosradio-digital-YYYYMMDD-HHMMSS-utc.mp3`
-- monitor script
-
-## version 1.2.3
-- all scripts in scripts folder
-- relative symlink
-## version 1.2.2
-- active link to version
-- cron script runs in tilos-archiver folder
-
-## version 1.2.1
-- fix install script bugs
-- add activate script
-
-## version 1.2.0
-- File name: `-digital-utc.mp3`
-- online folder moved to `/tilos/online`
-- install to version folder
-
-## version 1.1.0
-- File name: `-utc.mp3`
-- Sym link with time zone Budapest 
-
-## version 1.0.0
-- startup for test
+- First release to capture digital stream to archive machine
+- no ftp
 
 ## Folders
 
