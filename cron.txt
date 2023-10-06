@@ -1,1 +1,1 @@
-29,59 * * * * /home/arcjob/bin/tilos-archiver/active/scripts/tilos_arc_cron_job.sh
+29,59 * * * * $HOME/bin/tilos-archiver/active/scripts/tilos_arc_cron_job.sh >> $HOME/logs/cron.log 2>&1

@@ -5,7 +5,7 @@ echo "BP  `date +"%Y%m%d-%H%M%S"`"
 cat $(dirname $0)/../VERSION
 df -h | grep disk_sg20t
 crontab -l | grep tilos
-ls -la ~/capture
+ls -la "$HOME/capture" | grep mp3
 
 echo "process              count"
 echo " arcjob              `ps -ef | grep -v grep | grep arcjob -c`"
