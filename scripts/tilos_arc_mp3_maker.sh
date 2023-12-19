@@ -20,10 +20,11 @@ MINUTEBP=`date -d "TZ=\"Budapest/Budapest\" 1 min" +"%M"`
 
 FILENAME="tilosradio-digital-$YEAR$MOUNT$DAY-$HOUR$MINUTE-utc.mp3"
 LINKNAME="tilosradio-$YEARBP$MOUNTBP$DAYBP-$HOURBP$MINUTEBP.mp3"
+REMOTEFILENAME="tilosradio-$YEARBP$MOUNTBP$DAYBP-$HOURBP$MINUTEBP-test.mp3"
 ONLINEPATH="/tilos/online/$YEAR/$MOUNT/$DAY"
 LINKPATH="/tilos/online/$YEARBP/$MOUNTBP/$DAYBP"
 CAPTUREPATH="$HOME/capture"
-REMOTEPATH="tilos@archive.tilos.hu:/online/$YEAR/$MOUNT/$DAY"
+REMOTEPATH="archive@archive.tilos.hu:/home/tilos/archive/online/$YEAR/$MOUNT/$DAY"
 STREAM="http://192.168.2.60:8080/digital"
 
 FMEDIA="$HOME/bin/fmedia-1/fmedia"
@@ -47,8 +48,9 @@ echo "Move into $ONLINEPATH"
 mv "$CAPTUREPATH/$FILENAME" "$ONLINEPATH/$FILENAME"
 ln -s -r "$ONLINEPATH/$FILENAME" "$LINKPATH/$LINKNAME"
 # remote copy to archiver storage
-# sftp
-echo sftp "$ONLINEPATH/$FILENAME" "$REMOTEPATH/$FILENAME"
+# scp
+ssh -P 2222 -i $HOME/.ssh/id_arcjob_studio "mkdir -p $REMOTEPATH"
+scp -q -P 2222 -i $HOME/.ssh/id_arcjob_studio "$ONLINEPATH/$FILENAME" "$REMOTEPATH/$REMOTEFILENAME"
 date -u
 df -h | grep disk_sg20t
 echo "Done"

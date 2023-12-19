@@ -77,3 +77,10 @@ Add the job to contab from `cron.txt`
     
     crontab -e
     
+## scp
+
+Create ssh keys for scp.
+
+    mkdir ~/.ssh
+    ssh-keygen -f ~/.ssh/id_arcjob_studio
+    ssh-copy-id -i ~/.ssh/id_arcjob_studio archive@archive.tilos.hu
