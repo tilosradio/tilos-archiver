@@ -53,10 +53,12 @@ echo "Move into $FILEPATH"
 mv "$CAPTUREPATH/$FILENAME" "$FILEPATH/$FILENAME"
 ln -s -r "$FILEPATH/$FILENAME" "$LINKPATH/$LINKNAME"
 # remote copy to archiver storage
-# scp
+echo "make dir on remote $REMOTEURL:$REMOTEPATH"
 ssh -p 2222 -i $HOME/.ssh/id_arcjob_studio $REMOTEURL "mkdir -p $REMOTEPATH"
+echo "scp $LINKPATH/$LINKNAME $REMOTEURL:$REMOTEPATH/$REMOTENAME"
 scp -B -p -P 2222 -i $HOME/.ssh/id_arcjob_studio "$LINKPATH/$LINKNAME" "$REMOTEURL:$REMOTEPATH/$REMOTENAME"
 ssh -p 2222 -i $HOME/.ssh/id_arcjob_studio $REMOTEURL "ls -l $REMOTEPATH/$REMOTENAME"
+echo "scp done"
 date -u
 df -h | grep disk_sg20t
 echo "Done"
