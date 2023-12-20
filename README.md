@@ -1,7 +1,9 @@
 # tilos-archiver
 
-## version 1.3.0
+## version 1.3.2
 - scp to internet
+- clean up logs
+- rename logs to job_YYYY*.log from cron_YYYY*.log
 
 ## version 1.2.5
 - First release to capture digital stream to archive machine

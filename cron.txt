@@ -1,1 +1,2 @@
 29,59 * * * * $HOME/bin/tilos-archiver/active/scripts/tilos_arc_cron_job.sh >> $HOME/logs/cron.log 2>&1
+10 10 * * * $HOME/bin/tilos-archiver/active/scripts/cleanup_logs.sh >> $HOME/logs/cron.log 2>&1
