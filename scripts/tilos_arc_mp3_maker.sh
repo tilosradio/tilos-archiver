@@ -18,13 +18,18 @@ DAYBP=`date -d "TZ=\"Budapest/Budapest\" 1 min" +"%d"`
 HOURBP=`date -d "TZ=\"Budapest/Budapest\" 1 min" +"%H"`
 MINUTEBP=`date -d "TZ=\"Budapest/Budapest\" 1 min" +"%M"`
 
+FILEPATH="/tilos/online/$YEAR/$MOUNT/$DAY"
 FILENAME="tilosradio-digital-$YEAR$MOUNT$DAY-$HOUR$MINUTE-utc.mp3"
-LINKNAME="tilosradio-$YEARBP$MOUNTBP$DAYBP-$HOURBP$MINUTEBP.mp3"
-REMOTEFILENAME="tilosradio-$YEARBP$MOUNTBP$DAYBP-$HOURBP$MINUTEBP-test.mp3"
-ONLINEPATH="/tilos/online/$YEAR/$MOUNT/$DAY"
+
 LINKPATH="/tilos/online/$YEARBP/$MOUNTBP/$DAYBP"
+LINKNAME="tilosradio-$YEARBP$MOUNTBP$DAYBP-$HOURBP$MINUTEBP.mp3"
+
+REMOTEURL="archive@archive.tilos.hu"
+REMOTEPATH="/home/tilos/archive/online/$YEARBP/$MOUNTBP/$DAYBP"
+REMOTENAME="tilosradio-$YEARBP$MOUNTBP$DAYBP-$HOURBP$MINUTEBP-test.mp3"
+
 CAPTUREPATH="$HOME/capture"
-REMOTEPATH="archive@archive.tilos.hu:/home/tilos/archive/online/$YEAR/$MOUNT/$DAY"
+
 STREAM="http://192.168.2.60:8080/digital"
 
 FMEDIA="$HOME/bin/fmedia-1/fmedia"
@@ -38,19 +43,20 @@ SLEEPTIME=`expr 59 - \`date +%S\``
 echo "waiting for the sec 59 ... sleep $SLEEPTIME"
 sleep $SLEEPTIME
 
-echo "make dir for the day $ONLINEPATH"
-mkdir -p "$ONLINEPATH"
+echo "make dir for the day $FILEPATH"
+mkdir -p "$FILEPATH"
 mkdir -p "$LINKPATH"
 
 echo "Capture into $FILENAME"
 "$FMEDIA" "$STREAM" -o "$CAPTUREPATH/$FILENAME" --stream-copy --until=$DURATION
-echo "Move into $ONLINEPATH"
-mv "$CAPTUREPATH/$FILENAME" "$ONLINEPATH/$FILENAME"
-ln -s -r "$ONLINEPATH/$FILENAME" "$LINKPATH/$LINKNAME"
+echo "Move into $FILEPATH"
+mv "$CAPTUREPATH/$FILENAME" "$FILEPATH/$FILENAME"
+ln -s -r "$FILEPATH/$FILENAME" "$LINKPATH/$LINKNAME"
 # remote copy to archiver storage
 # scp
-ssh -P 2222 -i $HOME/.ssh/id_arcjob_studio "mkdir -p $REMOTEPATH"
-scp -q -P 2222 -i $HOME/.ssh/id_arcjob_studio "$ONLINEPATH/$FILENAME" "$REMOTEPATH/$REMOTEFILENAME"
+ssh -p 2222 -i $HOME/.ssh/id_arcjob_studio $REMOTEURL "mkdir -p $REMOTEPATH"
+scp -B -p -P 2222 -i $HOME/.ssh/id_arcjob_studio "$LINKPATH/$LINKNAME" "$REMOTEURL:$REMOTEPATH/$REMOTENAME"
+ssh -p 2222 -i $HOME/.ssh/id_arcjob_studio $REMOTEURL "ls -l $REMOTEPATH/$REMOTENAME"
 date -u
 df -h | grep disk_sg20t
 echo "Done"
